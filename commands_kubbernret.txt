@@ -1,0 +1,40 @@
+minikube start --extra-config="apiserver.cors-allowed-origins=['http://boot.dev']"
+minikube stop
+minikube delete
+
+
+kubectl create deployment synergychat-web --image=docker.io/bootdotdev/synergychat-web:latest
+
+kubectl get deployments
+kubectl get pods
+kubectl port-forward synergychat-web-f7b9f96dd-2277k 8080:8080
+
+kubectl edit deployment synergychat-web
+
+kubectl get pods
+
+kubectl get pods -o wide
+
+kubectl get deployment synergychat-web -o yaml
+
+kubectl get replicasets
+
+kubectl get deployment synergychat-web -o yaml > web-deployment.yaml
+
+kubectl apply -f web-deployment.yaml
+
+CrashLoopBackoff
+
+kubectl logs synergychat-api-57f665b78c-74rfg
+
+kubectl apply -f api-configmap.yaml
+
+synergychat-api-57f665b78c-74rfg
+
+kubectl port-forward synergychat-api-6c8d555cd6-mzb6h 8080:8080
+
+kubectl apply -f api-deployment.yaml
+
+kubectl get svc web-service -o yaml
+
+kubectl get svc
